@@ -1,4 +1,3 @@
-import 'package:clean_arch_structure/presentation/navigation/app_router.dart';
 import 'package:flutter/material.dart';
 
 void main() {

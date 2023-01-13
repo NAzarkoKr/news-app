@@ -1,6 +1,6 @@
-import 'package:clean_arch_structure/presentation/navigation/app_routes.dart';
-import 'package:clean_arch_structure/presentation/screens/home.dart';
 import 'package:flutter/material.dart';
+import 'package:news/presentation/navigation/app_routes.dart';
+import 'package:news/presentation/screens/home.dart';
 
 class AppRouter {
   AppRouter._();
