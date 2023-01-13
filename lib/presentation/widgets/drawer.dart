@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:news/presentation/providers/theme_provider.dart';
 import 'package:news/presentation/resources/image_path.dart';
 import 'package:provider/provider.dart';
@@ -36,7 +37,15 @@ class _CustomDrawerState extends State<CustomDrawer> {
                 const SizedBox(
                   height: 20,
                 ),
-                const Flexible(child: Text('News'))
+                Flexible(
+                  child: Text(
+                    'News',
+                    style: GoogleFonts.lobster(
+                      textStyle:
+                          const TextStyle(fontSize: 20, letterSpacing: 0.6),
+                    ),
+                  ),
+                ),
               ],
             ),
           ),

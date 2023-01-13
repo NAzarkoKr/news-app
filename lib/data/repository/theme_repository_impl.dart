@@ -1,7 +1,7 @@
 import 'package:news/data/data_sources/local_sources/local_data.dart';
 import 'package:news/domain/repository/theme_repository.dart';
 
-class ThemeRepositoryImpl extends ThemeRepository {
+class ThemeRepositoryImpl implements ThemeRepository {
   final ThemeLocalData themeLocalData;
 
   ThemeRepositoryImpl({required this.themeLocalData});
