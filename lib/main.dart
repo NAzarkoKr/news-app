@@ -10,10 +10,12 @@ import 'package:news/presentation/navigation/app_router.dart';
 import 'package:news/presentation/providers/theme_provider.dart';
 import 'package:news/presentation/resources/theme_export.dart';
 import 'package:provider/provider.dart';
+import 'package:news/presentation/di/injector.dart' as di;
 
 import 'data/data_sources/local_sources/local_data.dart';
 
-void main() {
+void main() async {
+  await di.init();
   runApp(const MyApp());
 }
 
@@ -52,11 +54,8 @@ class _MyAppState extends State<MyApp> {
         return MultiBlocProvider(
           providers: [
             BlocProvider<NewsBloc>(
-              create: (context) => NewsBloc(
-                getAllNewsUsecase: GetAllNewsUsecase(
-                    newsRepository:
-                        NewsRepositoryImpl(newsRemoteData: NewsRemoteData())),
-              )..add(
+              create: (context) => di.sl<NewsBloc>()
+                ..add(
                   const LoadNewsEvent(page: 1, sortBy: 'popularity'),
                 ),
             ),
