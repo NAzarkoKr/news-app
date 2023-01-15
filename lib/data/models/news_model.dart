@@ -44,11 +44,8 @@ class NewsModel extends NewsEntity {
     String title = json["title"] ?? "";
     String content = json["content"] ?? "";
     String description = json["description"] ?? "";
-
     String dateToShow = "";
-    // if (json["publishedAt"] != null) {
-    //   dateToShow = GlobalMethods.formattedDateText(json["publishedAt"]);
-    // }
+
     return NewsModel(
         newsId: json["source"]["id"] ?? "",
         sourceName: json["source"]["name"] ?? "",
@@ -61,9 +58,7 @@ class NewsModel extends NewsEntity {
         publishedAt: json["publishedAt"] ?? "",
         content: content,
         dateToShow: dateToShow,
-        readingTimeText: ''
-        //readingTime(title + description + content).msg,
-        );
+        readingTimeText: '');
   }
 
   static List<NewsModel> newsFromSnapshot(List newSnapshot) {

@@ -57,7 +57,7 @@ class _MyAppState extends State<MyApp> {
                     newsRepository:
                         NewsRepositoryImpl(newsRemoteData: NewsRemoteData())),
               )..add(
-                  const LoadNewsEvent(page: 3, sortBy: 'popularity'),
+                  const LoadNewsEvent(page: 1, sortBy: 'popularity'),
                 ),
             ),
           ],

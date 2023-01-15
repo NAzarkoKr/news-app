@@ -9,7 +9,6 @@ class NewsRemoteData {
       {required int page, required String sortBy}) async {
     try {
       var uri = Uri.https("newsapi.org", "v2/everything", {
-        "q": "bitcoin",
         "pageSize": "5",
         "domains": "techcrunch.com",
         "page": page.toString(),

@@ -1,20 +1,24 @@
 part of 'news_bloc.dart';
 
 abstract class NewsState extends Equatable {
-  const NewsState();
-
   @override
   List<Object> get props => [];
 }
 
-class NewsLoadingState extends NewsState {}
+class NewsLoadingState extends NewsState {
+  NewsLoadingState();
+}
 
 class NewsLoadedState extends NewsState {
   final List<NewsEntity> news;
-  const NewsLoadedState({
+  final int page;
+  final String sortBy;
+  NewsLoadedState({
     required this.news,
+    required this.page,
+    required this.sortBy,
   });
 
   @override
-  List<Object> get props => [news];
+  List<Object> get props => [news, page, sortBy];
 }
